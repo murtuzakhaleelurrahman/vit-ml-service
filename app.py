@@ -32,7 +32,7 @@ CORS(app)  # Enable CORS for all routes
 logger.info("Initializing ETA Predictor...")
 
 # Get paths to model files (in parent directory)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, 'xgb_eta_model.pkl')
 FEATURES_PATH = os.path.join(BASE_DIR, 'feature_columns.pkl')
 
@@ -277,3 +277,4 @@ if __name__ == '__main__':
     
     port = int(os.environ.get("PORT", 5001))
     app.run(host="0.0.0.0", port=port)
+
